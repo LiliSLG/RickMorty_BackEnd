@@ -1,6 +1,6 @@
 @font-face {
    font-family: rick_morty_font;
-   src: url(../../rick_and_morty/assets/get_schwifty.ttf);
+   src: url(../src/assets/get_schwifty.ttf);
 }
 .App {
    /* background-image:url("https://preview.redd.it/jfvf3w5rr3dz.png?width=960&crop=smart&auto=webp&s=3710d0cab3f7d317a9372278f0c1554213515d02") ; */
@@ -21,16 +21,6 @@
    align-items: center;
 }
 
-.Nav{
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
-   background-color: rgba(12, 39, 148, 0.712); 
-   margin: 1em, 0em, 1em, 0em;
-   height: 4em;
-   width: 90vw;
-   border-radius: 2em;
-}
 
 .Presentacion{
    /* background-color: black; */
