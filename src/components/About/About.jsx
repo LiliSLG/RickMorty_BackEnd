@@ -7,7 +7,7 @@ import styles from "./About.module.css";
 export default function About() {
   const navigate = useNavigate();
   const backToHome = () => {
-    navigate("/home")
+    navigate("/")
   }
   return (
     /* girar carta */

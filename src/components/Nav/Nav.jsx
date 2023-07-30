@@ -23,7 +23,7 @@ export default function Navs(props) {
             <NavLinkMe to="/about">
                 <button className={styles.buttonBack}>About</button>
             </NavLinkMe>
-            <NavLinkMe to="/home">
+            <NavLinkMe to="/">
                 <button className={styles.buttonBack}>Home</button>
             </NavLinkMe>
 

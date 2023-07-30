@@ -63,17 +63,16 @@
   }
   .buttonBack :focus {
     outline: none;
-  }
-  
+  }  
   
   .active {
-    color: brown;
+    color: rgba(42, 46, 165, 0.557);
     font-weight: bold;
     text-decoration: none;
   }
   
   .disable {
-    color: #f6f4e6;
+    color: #6c6c6900;
     text-decoration: none;
   }
   

@@ -5,14 +5,18 @@ import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx'
 import About from './components/About/About';
 import Details from './components/Details/Details';
+import NotFound from './NotFound/NotFound';
 
 
 function App() {
    const [characters, setCharacters] = useState([]);
-   // const navigate = useNavigate();
+   const navigate = useNavigate();
+   const backToHome = ()=>{
+      navigate("/")
+    }
 
    const onSearch = (id) => {
-
+      backToHome();
       if (isNaN(id)||id==="") {
          window.alert('¡Ingrese un ID válido!')         
       } else {         
@@ -48,10 +52,10 @@ function App() {
          </div>
          <Nav onSearch={onSearch} />         
          <Routes>
-            <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path="/" element={<Cards characters={characters} onClose={onClose} />} />
             <Route path="/about" element={<About />} />
             <Route path="/details/:DetailId" element={<Details characters={characters}/>} />
-            {/* <Route path="*" element={<Home />} /> */}
+            <Route path='*' element={<NotFound />}/>
          </Routes>
       </div>
    );
