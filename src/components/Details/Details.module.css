@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 40%;
+    height: 30%vw;
+    /* flex-wrap: wrap; */
+    justify-content:space-around;
+    align-content:center;
+    margin-top: 1%;
+    background-color: rgba(4, 1, 37, 0.441);
+    border-radius: 2em;
+  }
+  
+  .detailCard{
+    width: 50%;
+    /* height: fit-content; */       
+    display: flex;
+    flex-direction: column;   
+    align-items: center;    
+    border-radius: 2em;
+    margin: 1em;
+    padding: 1em;     
+    /* box-shadow:  1px 1px 4px 0 rgba(20, 20, 20, 0.2)inset; */
+    /* transform-style: preserve-3d;
+    transform: translateZ(-2em) rotateX(8deg);   */
+    /* &:hover{  */
+         /* transform: scale(1.1);     */
+         /* cursor: pointer;  */
+         /* background-color: rgba(4, 1, 37, 0.441);  */
+    /* } */
+}
+
+
+.name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 1.9em; */
+  color: rgb(194, 198, 201);
+  font-weight: 700;
+  padding: 0.1em; 
+  height: 50px;   
+  margin-top: 5%; 
+  text-shadow:-2px 0px 0px black, 2px 0px 0px black, 0px -2px 0px black, 0px 2px 0px black;color: rgb(200, 200, 223);
+}
+
+img{
+  height: 100%;
+}
+
+button{
+  height: 2.2em;
+  width: 2.2em;
+  color: rgb(2, 2, 37);
+  background-color: rgba(245, 243, 248, 0.534);    
+  border-radius: 50%;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  font-weight: 700;
+  font-size: 1em;    
+  position: relative;
+  align-self: self-end;
+  &:hover {
+      transform: scale(1.1);
+      color: rgba(192, 186, 186, 0.769);
+      background-color: rgba(54, 4, 4, 0.441);
+  }
+}

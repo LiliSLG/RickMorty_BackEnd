@@ -10,6 +10,7 @@ export default function Cards(props) {
             return (
                <Card
                key={eachCard.id}
+               id={eachCard.id}
                name={eachCard.name}
                status={eachCard.status}
                species={eachCard.species}
@@ -21,13 +22,3 @@ export default function Cards(props) {
          })}
       </div>)
 }
-
-
-/*  
-         return (
-            <Card
-               name={eachCard.name}
-               species={eachCard.species}
-               image={eachCard.image}
-               onClose={eachCard.onClose}
-            />)*/

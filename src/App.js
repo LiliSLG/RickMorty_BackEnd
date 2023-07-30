@@ -1,13 +1,18 @@
 import { useState } from 'react';
+import { Route, Routes,useNavigate } from 'react-router-dom';
 import './App.css';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx'
+import About from './components/About/About';
+import Details from './components/Details/Details';
 
 
 function App() {
    const [characters, setCharacters] = useState([]);
+   // const navigate = useNavigate();
 
    const onSearch = (id) => {
+
       if (isNaN(id)||id==="") {
          window.alert('¡Ingrese un ID válido!')         
       } else {         
@@ -41,8 +46,13 @@ function App() {
             <h1 className='Bienvenidos'> Bienvenidos</h1>
             <img className='LogoRickMorty' src='https://vectorlogo4u.com/wp-content/uploads/2020/11/Rick-and-Morty-Logo-Vector-01-1536x726.png' alt='No encuentro la imagen' />
          </div>
-         <Nav onSearch={onSearch} />
-         <Cards characters={characters} onClose={onClose} />
+         <Nav onSearch={onSearch} />         
+         <Routes>
+            <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/details/:DetailId" element={<Details characters={characters}/>} />
+            {/* <Route path="*" element={<Home />} /> */}
+         </Routes>
       </div>
    );
 }

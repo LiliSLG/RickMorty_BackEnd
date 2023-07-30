@@ -20,10 +20,48 @@
     }
 }
 
-.button{
-    background-color: rgba(0, 0, 0, 0.774);
-    color: aliceblue;
-    height: 3em;
-    width: 9em;
-
-}
+.buttonBack {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5d7691;
+    background-image: linear-gradient(315deg, #3684cd 0%, #454545 74%);
+    background-size: 200% 100%;
+    background-position: left;
+    transition: 500ms;
+    color: #f6f4e6;
+    margin: 5px;
+    /* font-weight: bold; */
+    font-size: large;
+  }
+  
+  .buttonBack :before {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 40px;
+    background-color: #1b2845;
+    background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+    transition: 500ms;
+  }
+  
+  .buttonBack:hover {
+    background-position: right;
+    color: #c6c3c3;
+  }
+  
+  .buttonBack:hover:before {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .buttonBack :focus {
+    outline: none;
+  }
+  

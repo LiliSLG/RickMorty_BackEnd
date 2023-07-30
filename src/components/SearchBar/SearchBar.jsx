@@ -15,7 +15,7 @@ export default function SearchBar(props) {
             type='search' 
             placeholder="Escriba un ID"
             onChange = {handleInputChange}/>
-         <button className={styles.button} 
+         <button className={styles.buttonBack} 
             onClick={() => props.onSearch(character)}>
                Agregar
          </button> 
