@@ -1,0 +1,27 @@
+.warning {
+    border: solid red 1px;
+    border-radius: 0.2em;
+  }
+  
+  .danger {
+    font-size: 10px;
+    color: red;
+    margin-left: 10em;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 40%;
+    height: 30%vw;
+    /* flex-wrap: wrap; */
+    justify-content:space-around;
+    align-content:center;
+    margin-top: 1%;
+    background-color: rgba(4, 1, 37, 0.441);
+    border-radius: 2em;
+  }
+
+  .form img{
+    width: 30%;
+  }

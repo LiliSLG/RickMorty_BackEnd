@@ -10,15 +10,17 @@ export default function SearchBar(props) {
 
    return (
       <div className={styles.container}>
-         <input className = {styles.imput} 
+         <input className={styles.imput}
             id='id-input'
-            type='search' 
+            type='search'
             placeholder="Escriba un ID"
-            onChange = {handleInputChange}/>
-         <button className={styles.buttonBack} 
-            onClick={() => props.onSearch(character)}>
+            onChange={handleInputChange} />
+         <div>
+            <button className={styles.buttonAgregar}
+               onClick={() => props.onSearch(character)}>
                Agregar
-         </button> 
+            </button>
+         </div>
       </div>
    );
 }

@@ -5,7 +5,7 @@ import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx'
 import About from './components/About/About';
 import Details from './components/Details/Details';
-import NotFound from './NotFound/NotFound';
+import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
@@ -62,3 +62,34 @@ function App() {
 }
 
 export default App;
+
+// Función para obtener todos los personajes 
+// const onSearch = (id) => { 
+//    if (isNaN(id)) { 
+//      alert("Por favor, ingresa un número válido como ID."); 
+//      return; 
+//    } 
+
+//    axios(`https://rickandmortyapi.com/api/character/${id}`) 
+//      .then(({ data }) => { 
+//        if (data.name) { 
+//          const characterExists = characters.some( 
+//            (character) => character.id === data.id 
+//          ); 
+
+//          if (characterExists) { 
+//            alert("Este personaje ya se encuentra en la lista."); 
+//          } else { 
+//            setCharacters((characters) => [...characters, data]); 
+//          } 
+//        } else { 
+//          alert(`¡No hay personajes con el ID proporcionado!`); 
+//        } 
+//      }) 
+//      .catch((error) => { 
+//        alert( 
+//          `Ocurrió un error al obtener los datos de la API. Por favor, intenta nuevamente más tarde.` 
+//        ); 
+//        console.error(error); 
+//      }); 
+//  };

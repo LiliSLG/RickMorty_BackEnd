@@ -3,10 +3,10 @@
     justify-content: space-around;
     align-items: center;
     background-color: rgba(12, 39, 148, 0.712); 
-    margin: 1em, 0em, 1em, 0em;
-    height: 4em;
+    /* margin: 2em, 0em, 2em, 0em; */
+    height: 40px;
     width: 90vw;
-    border-radius: 2em;
+    border-radius: 1em;
     /* color: #f6f4e6; */
  }
 
@@ -21,8 +21,8 @@
   }
   
   .buttonBack {
-    width: 150px;
-    height: 50px;
+    width: 125px;
+    height: 25px;
     cursor: pointer;
     border-radius: 5px;
     display: flex;
@@ -36,18 +36,18 @@
     color: #f6f4e6;
     margin: 5px;
     /* font-weight: bold; */
-    font-size: large;
+    font-size: 13px;
   }
   
   .buttonBack :before {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 16px;
+    font-size: 12px;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 140px;
-    height: 40px;
+    width: 120px;
+    height: 20px;
     background-color: #1b2845;
     background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
     transition: 500ms;
