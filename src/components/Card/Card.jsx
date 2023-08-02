@@ -18,11 +18,12 @@ export default function Card(props) {
                   <p className={styles.name}>{name}</p>
                </div>
                <div className={styles.details}>
+                  
                   <div className={(status === "Alive") ? styles.textLive : ((status === "Dead") ? styles.textDead : styles.textUnknownDead)}>
                      <p><b> # </b> <br></br> {id} </p>
                   </div>
                   <p><b>Estado</b> <br></br>{status}</p>
-                  <p> <b>Especie</b> <br></br>{species}</p>
+                  <p><b>Especie</b> <br></br>{species}</p>
                   {/* <b>Género: </b> {gender} <br></br>
                      <b>Origen:</b> {origin}</p> */}
                </div>

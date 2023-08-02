@@ -16,7 +16,7 @@ a:active {
   color: #f6f4e6;
   background-color: rgba(4, 1, 37, 0.441);
   width: 30vw;
-  height: 40vh;   
+  height: auto;   
   transition: all 0.4s ease;
   text-decoration: none;
 }
@@ -92,3 +92,30 @@ button{
   transform: rotateY(180deg);
 }
 
+.buttonContainer{
+  width: 30vw;
+  height: 25px;
+  display: flex;
+  justify-content: flex-end;   
+  position: absolute; 
+  /* background-color: chartreuse; */
+}
+
+.buttonContainer button{
+  height: 20px;
+  width: 20px;
+  color: rgb(2, 2, 37);
+  background-color: rgba(245, 243, 248, 0.534);    
+  border-radius: 50%;
+  margin: 2px;
+  padding: 1px;
+  font-weight: 700;
+  font-size: 12px;    
+  position: relative;
+  align-self: self-end;
+  &:hover {
+      transform: scale(1.1);
+      color: rgba(192, 186, 186, 0.769);
+      background-color: rgba(54, 4, 4, 0.441);
+  }
+}

@@ -1,27 +1,99 @@
 .warning {
-    border: solid red 1px;
-    border-radius: 0.2em;
-  }
-  
-  .danger {
-    font-size: 10px;
-    color: red;
-    margin-left: 10em;
-  }
+  border: solid red 1px;
+  border-radius: 0.2em;
+}
 
-  .form {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 40%;
-    height: 30%vw;
-    /* flex-wrap: wrap; */
-    justify-content:space-around;
-    align-content:center;
-    margin-top: 1%;
-    background-color: rgba(4, 1, 37, 0.441);
-    border-radius: 2em;
-  }
+.danger {
+  font-size: 10px;
+  color: red;
+  margin-left: 10em;
+}
 
-  .form img{
-    width: 30%;
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(12, 39, 148, 0.712); 
+  /* margin: 2em, 0em, 2em, 0em; */
+  height: 250px; 
+  width: 320px;
+  border-radius: 1em;
+  padding: 20px;
+  margin: 30px;
+  /* color: #f6f4e6; */
+}
+
+.form img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.buttonBack {
+  width: 125px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5d7691;
+  background-image: linear-gradient(315deg, #3684cd 0%, #454545 74%);
+  background-size: 200% 100%;
+  background-position: left;
+  transition: 500ms;
+  color: #f6f4e6;
+  margin: 5px;
+  /* font-weight: bold; */
+  font-size: 13px;
+}
+
+.buttonBack :before {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 20px;
+  background-color: #1b2845;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+  transition: 500ms;
+}
+
+.buttonBack:hover {
+  background-position: right;
+  color: #c6c3c3;
+}
+
+.buttonBack:hover:before {
+  color: rgba(255, 255, 255, 0.8);
+}
+.buttonBack :focus {
+  outline: none;
+}  
+
+.campo {
+  position: relative;
+  display: grid;
+  align-content: space-around;
+}
+
+label {
+  width: 300px;
+}
+
+input {
+  width: 300px;
+  padding: 7px;
+}
+
+.campo span {
+  position: absolute;
+  right: 10px;
+  top: 5px; 
+  cursor: pointer;
+ /* pwd-icon */
+}
