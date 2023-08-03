@@ -25,7 +25,7 @@ export default function Details(props) {
   //   return setCharacter({});
   // }, [DetailId]);
   const backToHome = ()=>{
-    navigate("/")
+    navigate("/home")
   }
 
   return (

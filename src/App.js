@@ -15,7 +15,7 @@ function App() {
 
    const navigate = useNavigate();
    const location = useLocation();
-   const backToHome = () => { navigate("/") }
+   const backToHome = () => { navigate("/home") }
 
    const EMAIL = 'silvialilianagarcia@hotmail.com';
    const PASSWORD = 'cocoloco1';
@@ -35,9 +35,13 @@ function App() {
       navigate('/');
    }
 
+   // useEffect(() => {
+   //    !access && navigate('/');
+   // }, [access, navigate]);
+
    useEffect(() => {
       !access && navigate('/');
-   }, [access, navigate]);
+   }, [access]);
 
    const onSearch = (id) => {
       backToHome();
@@ -80,7 +84,7 @@ function App() {
             <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
             <Route path="/about" element={<About />} />
             <Route path="/details/:DetailId" element={<Details characters={characters} />} />
-            <Route path='*' element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
          </Routes>
       </div>
    );
