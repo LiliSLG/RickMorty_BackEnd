@@ -1,4 +1,4 @@
-.card{
+.container{
     /* width: 18vw;
     height: 10vh; */
     width: 150px;
@@ -99,7 +99,7 @@
     width: 150px;
     height: 25px;
     display: flex;
-    justify-content:space-between;   
+    /* justify-content:space-evenly;    */
     position: absolute; 
     /* background-color: chartreuse; */
 }

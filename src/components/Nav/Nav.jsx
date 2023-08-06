@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Nav.module.css';
 import SearchBar from '../SearchBar/SearchBar.jsx';
-import { Link } from 'react-router-dom';
 
 const NavLinkMe = ({ to, children, ...props }) => {
   return (
@@ -23,18 +22,20 @@ export default function Navs(props) {
   
   return (
     <div className={styles.container}>
-
-      <NavLinkMe to="/about">
-        <button className={styles.buttonBack}>About</button>
-      </NavLinkMe>
       <NavLinkMe to="/home">
         <button className={styles.buttonBack}>Home</button>
       </NavLinkMe>
+      <NavLinkMe to="/favorites">
+        <button className={styles.buttonBack}>Favorites</button>
+      </NavLinkMe>
+      <NavLinkMe to="/about">
+        <button className={styles.buttonBack}>About</button>
+      </NavLinkMe>
+      <SearchBar onSearch={(characterID) => props.onSearch(characterID)} />
       <NavLinkMe to="/">
         <button className={styles.buttonBack} onClick={handleLogOut}>LogOut</button>
       </NavLinkMe>
 
-      <SearchBar onSearch={(characterID) => props.onSearch(characterID)} />
     </div>
   )
 }

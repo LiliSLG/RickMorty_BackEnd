@@ -7,6 +7,7 @@ import About from './components/About/About';
 import Details from './components/Details/Details';
 import NotFound from './components/NotFound/NotFound';
 import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites'
 
 
 function App() {
@@ -24,10 +25,12 @@ function App() {
    //   const PASSWORD = 'unaPassword';
 
    function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
-      }
+      // if (userData.password === PASSWORD && userData.email === EMAIL) {
+      //    setAccess(true);
+      //    navigate('/home');
+      // }
+      setAccess(true);
+      navigate('/home');
    }
 
    function logOut() {
@@ -82,6 +85,7 @@ function App() {
          <Routes>
             <Route path="/" element={<Form login={login} />} />
             <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path="/favorites" element={<Favorites/>} />
             <Route path="/about" element={<About />} />
             <Route path="/details/:DetailId" element={<Details characters={characters} />} />
             <Route path="*" element={<NotFound />} />

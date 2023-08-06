@@ -13,9 +13,6 @@ export default function Contact(props) {
     password: ''
   });
 
-  
-
-
   //mostrar password
   const [shownPwd, setShownPwd] = React.useState(false);
   const switchShownPwd = () => setShownPwd(!shownPwd);
@@ -50,6 +47,7 @@ export default function Contact(props) {
     setErrors(validate({ ...userData, [name]: value }));
     // setErrors(validate({ ...inputs, [event.target.name]: event.target.value }));
   }
+  
   return (
     <div >
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -100,7 +98,10 @@ export default function Contact(props) {
           </div>
         </div>
         <div>
-          <button type="submit" className={styles.buttonBack}>Enviar</button>
+          <button type="submit"
+            className={styles.buttonBack}>
+            Enviar</button>
+          {/* disabled={!this.errors.name === !this.errors.price} */}
         </div>
       </form>
     </div>

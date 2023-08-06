@@ -1,6 +1,6 @@
 .container{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 15% 15% 15% 40% 5%;
     align-items: center;
     background-color: rgba(12, 39, 148, 0.712); 
     /* margin: 2em, 0em, 2em, 0em; */

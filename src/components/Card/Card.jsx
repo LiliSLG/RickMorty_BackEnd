@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import styles from './Card.module.css';
+import { addFavorite, removeFavorite } from '../../redux/actions';
 
-export default function Card(props) {
-   const { id, name, status, species, gender, origin, image, onClose } = props;
+// export default function Card(props) {
+function Card(props) {
+   const { id, name, status, species, gender, origin, image, onClose,
+      removeFavorite, addFavorite, myFavorites } = props;
+   const [isFav, setIsFav] = useState(false);
+
+   const handleFavorite = () => {
+      if (isFav) {
+         setIsFav(false);
+         removeFavorite(id)
+      } else {
+         setIsFav(true);
+         addFavorite({ id, name, status, species, gender, origin, image, onClose })
+      }
+   };
+
+   useEffect(() => {
+      myFavorites.forEach((fav) => {
+         if (fav.id === props.id) {
+            setIsFav(true);
+         }
+      });
+   }, [myFavorites]);
+
    return (
       <div className={styles.card}>
          <div className={styles.buttonContainer}>
-            <button onClick={onClose}>X</button>
+            {isFav ?
+               (<button id='favicon' onClick={handleFavorite}>❤️</button>)
+               : (<button id='favicon' onClick={handleFavorite}>🤍</button>)
+            }
+            {isFav ? null : (<button id='buttonClose' onClick={onClose}>X</button>)}
          </div>
          <Link to={`/details/${id}`} className={styles.link}>
             <div className={(status === "Alive") ? styles.imageContainerLive : styles.imageContainerDead}>
@@ -18,7 +46,7 @@ export default function Card(props) {
                   <p className={styles.name}>{name}</p>
                </div>
                <div className={styles.details}>
-                  
+
                   <div className={(status === "Alive") ? styles.textLive : ((status === "Dead") ? styles.textDead : styles.textUnknownDead)}>
                      <p><b> # </b> <br></br> {id} </p>
                   </div>
@@ -34,3 +62,17 @@ export default function Card(props) {
    );
 }
 
+const mapStateToProps = (state) => {
+   return {
+      myFavorites: state.myFavorites
+   }
+}
+
+const mapDispatchToProps = (dispatch) => {
+   return {
+      addFavorite: (character) => { dispatch(addFavorite(character)) },
+      removeFavorite: (id) => { dispatch(removeFavorite(id)) }
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
