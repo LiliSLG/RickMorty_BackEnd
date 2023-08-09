@@ -32,10 +32,17 @@ function Card(props) {
       <div className={styles.card}>
          <div className={styles.buttonContainer}>
             {isFav ?
-               (<button id='favicon' onClick={handleFavorite}>❤️</button>)
-               : (<button id='favicon' onClick={handleFavorite}>🤍</button>)
+               (<button id='favicon' 
+                  className={styles.favicon}
+                  onClick={handleFavorite}>❤️</button>)
+               : (<button id='favicon' 
+                  className={styles.favicon}
+                  onClick={handleFavorite}>🤍</button>)
             }
-            {isFav ? null : (<button id='buttonClose' onClick={onClose}>X</button>)}
+            {isFav ? null : (<button 
+                              id='buttonClose' 
+                              className={styles.buttonClose}
+                              onClick={onClose}>X</button>)}
          </div>
          <Link to={`/details/${id}`} className={styles.link}>
             <div className={(status === "Alive") ? styles.imageContainerLive : styles.imageContainerDead}>

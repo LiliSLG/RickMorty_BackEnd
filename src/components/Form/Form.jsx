@@ -52,7 +52,8 @@ export default function Contact(props) {
     <div >
       <form className={styles.form} onSubmit={handleSubmit}>
         <div>
-          <img src="https://wallpaperaccess.com/full/831749.png" alt="" />
+        <img src="https://www.freepnglogos.com/uploads/rick-and-morty-png/rick-and-morty-portal-shoes-white-clothing-zavvi-23.png" alt="" />        
+          {/* <img src="https://wallpaperaccess.com/full/831749.png" alt="" /> */}
         </div>
         <div>
           {/* <label htmlFor='email'>Correo Electrónico:</label><br /> */}
