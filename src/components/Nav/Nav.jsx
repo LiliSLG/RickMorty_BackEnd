@@ -31,7 +31,7 @@ export default function Navs(props) {
       <NavLinkMe to="/about">
         <button className={styles.buttonBack}>About</button>
       </NavLinkMe>
-      <SearchBar onSearch={(characterID) => props.onSearch(characterID)} />
+      <SearchBar onSearch={(characterID, random) => props.onSearch(characterID, random)} />
       <NavLinkMe to="/">
         <button className={styles.buttonBack} onClick={handleLogOut}>LogOut</button>
       </NavLinkMe>

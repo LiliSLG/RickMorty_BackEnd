@@ -1,15 +1,15 @@
 .container{
-    width: 50%;
-    height: 3em;
+    width: 70%;
+    height: 2em;
     display: flex;
     align-items:center;
-    background-color: #1b28456a;
+    background-color: #0002066a;
 }
 
 .imput{
     background-color: rgba(248, 245, 245, 0.804);
     height: 25px;
-    width: 30em;
+    width: 7em;
     border-radius: 0.1em;
     padding: 0.5em;
     font-size: 12px;
@@ -22,7 +22,7 @@
 }
 
 .buttonAgregar {
-  width: 100px;
+  width: 5em;
   height: 25px;
   cursor: pointer;
   border-radius: 5px;
@@ -35,20 +35,22 @@
   background-position: left;
   transition: 500ms;
   color: #f6f4e6;
-  margin: 5px;
+  margin: 4.5px;
   /* font-weight: bold; */
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: lighter;
 }
   
   .buttonAgregar :before {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 12px;
+    font-size: 11px;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 95px;
+    width: 4em;
     height: 20px;
+    font-weight: lighter;
     background-color: #132c0f;
     background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
     transition: 500ms;
