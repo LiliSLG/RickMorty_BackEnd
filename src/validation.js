@@ -19,7 +19,8 @@ export function validate(userData) {
     // eslint-disable-next-line
     const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     const regexletrasynumeros = new RegExp(/^(?:.*\d){1}/);
-    const errors = {};
+    // const regexCaracteresInvalidos = new RegExp(/^(?:.*?[#?!@$ %^&*-])/);
+    const errors = { email: "", password: "" };
     if (!regexEmail.test(userData.email)) {
         errors.email = 'Debe ser un correo electrónico';
     }
@@ -36,7 +37,7 @@ export function validate(userData) {
         errors.password = "Debe tener entre 6 y 10 caracteres"
     }
     if (!userData.password.length) {
-        errors.password = "Se requiere un password"        
+        errors.password = "Se requiere un password"
     }
     return errors
 }

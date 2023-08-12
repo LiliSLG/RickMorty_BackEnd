@@ -6,17 +6,20 @@
 .danger {
   font-size: 10px;
   color: red;
-  margin-left: 10em;
+  justify-self: center;
+  /* margin-left: 10em; */
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  background-color: rgba(12, 39, 148, 0.712); 
+  
+
+  background-color: rgba(12, 39, 148, 0.712);
   /* margin: 2em, 0em, 2em, 0em; */
-  height: 250px; 
+  /* height: 300px; */
   width: 320px;
   border-radius: 1em;
   padding: 20px;
@@ -49,6 +52,10 @@
   font-size: 13px;
 }
 
+.buttonBack:disabled {
+  background: #ccc;
+}
+
 .buttonBack :before {
   color: rgba(255, 255, 255, 0.5);
   font-size: 12px;
@@ -73,27 +80,58 @@
 }
 .buttonBack :focus {
   outline: none;
-}  
+}
 
 .campo {
   position: relative;
   display: grid;
   align-content: space-around;
+  height: 55px;
 }
 
 label {
   width: 300px;
+  text-align: center;
+  padding: 5px;
 }
 
 input {
   width: 300px;
-  padding: 7px;
+  height: 25px;
+  padding: 5px;
 }
 
 .campo span {
   position: absolute;
   right: 10px;
-  top: 5px; 
+  top: 5px;
   cursor: pointer;
- /* pwd-icon */
+  /* pwd-icon */
+}
+
+.checkbox {
+  /* display: flex; */
+  flex-direction: row-reverse;
+  /* justify-content: space-between; */
+  align-items: center;
+  height: 16px;
+  padding: 10px;
+}
+
+.checkbox label {
+  width: 130px;
+  color: #f6f4e6; 
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.checkbox input {
+  width: 20px;
+  height: 13px;
+}
+
+
+.buttonCointainer {
+  display: flex;
+  justify-content: center;
 }
