@@ -6,7 +6,7 @@ export default function Cards(props) {
    const { characters } = props;
    return (
       <div className={styles.container}>
-         {characters.map((eachCard) => {
+         {characters?.map((eachCard) => {
             return (
                <Card
                key={eachCard.id}

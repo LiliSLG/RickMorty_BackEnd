@@ -8,6 +8,13 @@ export default function SearchBar(props) {
     setCharacter(event.target.value);
   };
 
+  const handleEnter = (event) => {
+    if (event.keyCode === 13) {
+      props.onSearch(character);
+      setCharacter("");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <input
@@ -16,6 +23,7 @@ export default function SearchBar(props) {
         type="search"
         placeholder="Escriba un ID"
         onChange={handleInputChange}
+        onKeyUp={handleEnter}
       />
       <div>
         <button
@@ -26,7 +34,7 @@ export default function SearchBar(props) {
         </button>
       </div>
       <div>
-      <button
+        <button
           className={styles.buttonAgregar}
           onClick={() => props.onSearch(character, true)}
         >

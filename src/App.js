@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 import "./App.css";
 import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav.jsx";
@@ -55,19 +56,32 @@ function App() {
     }
     if (isNaN(id) || id === "") {
       window.alert("¡Ingrese un ID válido!");
+    } else if (characters.filter((char) => char.id === +id).length > 0) {
+      window.alert("¡Ya existe un personaje con este ID!");
     } else {
-      if (characters.filter((char) => char.id === +id).length > 0) {
-        window.alert("¡Ya existe un personaje con este ID!");
-      } else {
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
-          .then((res) => res.json())
-          .then((data) => {
-            setCharacters((characters) => [...characters, data]);
-          })
-          //setCharacters(...characters, data]) ES LO MISMO
-          .catch((error) => window.alert("¡No hay personajes con este ID!"));
-      }
+      axios
+        .get(`https://rickandmortyapi.com/api/character/${id}`)
+        .then((response) => {
+          // Success
+          setCharacters((characters) => [...characters, response.data]);
+        })
+        .catch((error) => {
+          // Error
+          window.alert("¡No hay personajes con este ID!");
+          console.log("Error", error.message);
+        });
+
+      //   fetch(`https://rickandmortyapi.com/api/character/${id}`)
+      //     .then((res) => res.json())
+      //     .then((data) => {
+      //       setCharacters((characters) => [...characters, data]);
+      //     })
+      //     .catch(window.alert("¡No hay personajes con este ID!"));
+      //   //setCharacters(...characters, data]) ES LO MISMO
+      //   // .catch((error) => window.alert());//"¡No hay personajes con este ID!"
+      // }
     }
+
     // !XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     const inputDOM = document.getElementById("id-input");
     inputDOM.value = "";
