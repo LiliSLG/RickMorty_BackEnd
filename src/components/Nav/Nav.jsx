@@ -1,25 +1,25 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styles from './Nav.module.css';
-import SearchBar from '../SearchBar/SearchBar.jsx';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styles from "./Nav.module.css";
+import SearchBar from "../SearchBar/SearchBar.jsx";
 
 const NavLinkMe = ({ to, children, ...props }) => {
   return (
     <NavLink
       {...props}
       to={to}
-      className={({ isActive }) =>
-        (isActive ? (styles.active) : (styles.disable))}>
+      className={({ isActive }) => (isActive ? styles.active : styles.disable)}
+    >
       {children}
     </NavLink>
-  )
-}
+  );
+};
 
 export default function Navs(props) {
   const handleLogOut = () => {
-    props.logOut()
-  }
-  
+    props.logOut();
+  };
+
   return (
     <div className={styles.container}>
       <NavLinkMe to="/home">
@@ -31,11 +31,15 @@ export default function Navs(props) {
       <NavLinkMe to="/about">
         <button className={styles.buttonBack}>About</button>
       </NavLinkMe>
-      <SearchBar onSearch={(characterID, random) => props.onSearch(characterID, random)} />
+      <SearchBar
+        className={styles.SearchBar}
+        onSearch={(characterID, random) => props.onSearch(characterID, random)}
+      />
       <NavLinkMe to="/">
-        <button className={styles.buttonBack} onClick={handleLogOut}>LogOut</button>
+        <button className={styles.buttonBack} onClick={handleLogOut}>
+          LogOut
+        </button>
       </NavLinkMe>
-
     </div>
-  )
+  );
 }

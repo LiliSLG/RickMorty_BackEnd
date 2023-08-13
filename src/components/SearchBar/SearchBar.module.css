@@ -4,12 +4,13 @@
     display: flex;
     align-items:center;
     background-color: #0002066a;
+    justify-content: space-evenly;
 }
 
 .imput{
     background-color: rgba(248, 245, 245, 0.804);
     height: 25px;
-    width: 7em;
+    width: 8em;
     border-radius: 0.1em;
     padding: 0.5em;
     font-size: 12px;

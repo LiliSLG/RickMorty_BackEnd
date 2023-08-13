@@ -12,13 +12,16 @@
    /* background-image:url("https://www.xtrafondos.com/descargar.php?id=6534&resolucion=6000x3000") ; */
    background-position: center;
    background-size: cover;
-   background-repeat: no-repeat;
+   /* background-repeat: no-repeat; */
+   background-attachment: fixed;   
    max-width: 100%;
    height: 100vh;
    text-align: center;
    display: flex;
    flex-direction: column;
    align-items: center;
+
+
 }
 
 

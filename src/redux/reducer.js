@@ -14,7 +14,7 @@ const FavReducer = (state = initialState, { type, payload }) => {
                 allCharacters:
                     [...state.allCharacters,
                         payload],
-                myFavorites:
+                myFavorites: 
                     [...state.allCharacters,
                         payload]
             }
@@ -25,15 +25,17 @@ const FavReducer = (state = initialState, { type, payload }) => {
                     character.id !== +payload)
             return {
                 ...state,
-                myFavorites: filtered
+                myFavorites: filtered,
+                allCharacters: filtered
             }
         }
         case FILTER: {
             let filterByGender = [];
             if (payload !== 'All') {
                 filterByGender = [...state.allCharacters].filter((character) =>
-                    character.gender === payload)
-            } else { filterByGender = state.allCharacters }
+                    character.gender === payload) //El filtro se hace sobre todos los favoritos, no es filtro de filtro
+            } else { 
+                filterByGender = state.allCharacters }
             return {
                 ...state,
                 myFavorites: filterByGender

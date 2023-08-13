@@ -30,7 +30,7 @@ export default function SearchBar(props) {
           className={styles.buttonAgregar}
           onClick={() => props.onSearch(character)}
         >
-          Agregar
+          Search
         </button>
       </div>
       <div>

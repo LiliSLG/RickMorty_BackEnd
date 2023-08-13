@@ -38,6 +38,7 @@ function App() {
 
   function logOut() {
     access && setAccess(false);
+    setCharacters([]);
     navigate("/");
   }
 
