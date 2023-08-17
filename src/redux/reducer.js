@@ -30,6 +30,7 @@ const FavReducer = (state = initialState, { type, payload }) => {
             }
         }
         case FILTER: {
+            // let favoriteFiltered = action.payload === "All" ? state.allFavorites : state.allFavorites.filter(char => char.gender === action.payload)
             let filterByGender = [];
             if (payload !== 'All') {
                 filterByGender = [...state.allCharacters].filter((character) =>
