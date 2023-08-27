@@ -20,6 +20,8 @@ function App() {
     navigate("/home");
   };
 
+  const URL = "http://localhost:3001/rickandmorty/character/";
+  // const URL = `https://rickandmortyapi.com/api/character/${id}`
   // const EMAIL = 'juanperez@hotmail.com';
   // const PASSWORD = 'cocoloco1';
 
@@ -60,8 +62,9 @@ function App() {
     } else if (characters.filter((char) => char.id === +id).length > 0) {
       window.alert("¡Ya existe un personaje con este ID!");
     } else {
+      console.log(URL+id);
       axios
-        .get(`https://rickandmortyapi.com/api/character/${id}`)
+        .get(URL+id)
         .then((response) => {
           // Success
           setCharacters((characters) => [...characters, response.data]);

@@ -4,6 +4,8 @@ import { useParams,useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./Details.module.css"
 
+// const URL = `http://localhost:3001/rickandmorty/character/${id}`
+// const URL = `https://rickandmortyapi.com/api/character/${+DetailId}`
 
 export default function Details(props) {
   const { DetailId } = useParams();
@@ -14,7 +16,7 @@ export default function Details(props) {
   // const [character, setCharacter] = useState;
 //!no funciona con el axios
   // React.useEffect(() => {
-  //   axios(`https://rickandmortyapi.com/api/character/${+DetailId}`)
+  //   axios(URL)
   //     .then(({ data }) => {
   //       if (data.name) {
   //         setCharacter(data);
