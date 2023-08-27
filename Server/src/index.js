@@ -11,6 +11,7 @@ http
     res.setHeader("Access-Control-Allow-Origin", "*");
     const { url } = req;
     if (url.includes("/rickandmorty/character")) {
+      // const id = url.split("/").pop();
       const id = url.split("/").at(-1);
       // const character = data.find((char) => char.id == id);
       const character = data.find((char) => char.id === +id);
