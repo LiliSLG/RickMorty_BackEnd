@@ -128,3 +128,5 @@ Ahora comprobaremos que todo funciona correctamente. Para esto:
 </br >
 
 <img src="./img/example.gif" alt="" />
+
+npm install axios
