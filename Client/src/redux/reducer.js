@@ -8,12 +8,20 @@ const initialState = {
 // export default (state = initialState, action) => {
 const FavReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case ADD_FAV:
-      return { ...state, myFavorites: payload, allCharacters: payload };
-    
-    case REMOVE_FAV:
-      return { ...state, myFavorites: payload };
-    
+    case ADD_FAV: {
+      return {
+        ...state,
+        allCharacters: payload,
+        myFavorites: payload,
+      };
+    }
+    case REMOVE_FAV: {
+      return {
+        ...state,
+        allCharacters: payload,
+        myFavorites: payload,
+      };
+    }
     case FILTER: {
       // let favoriteFiltered = action.payload === "All" ? state.allFavorites : state.allFavorites.filter(char => char.gender === action.payload)
       let filterByGender = [];
