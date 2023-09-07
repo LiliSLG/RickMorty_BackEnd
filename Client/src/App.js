@@ -28,14 +28,29 @@ function App() {
   const EMAIL = "ejemplo@gmail.com";
   const PASSWORD = "1Password";
 
+  //login antes de server
+  // function login(userData) {
+  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
+  //     setAccess(true);
+  //     navigate("/home");
+  //     return true;
+  //   } else return false;
+  //   // setAccess(true);
+  //   // navigate('/home');
+  // }
+
   function login(userData) {
-    if (userData.password === PASSWORD && userData.email === EMAIL) {
-      setAccess(true);
-      navigate("/home");
-      return true;
-    } else return false;
-    // setAccess(true);
-    // navigate('/home');
+    const { email, password } = userData;
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+      const { access } = data;
+      // const  accesso  = data.access;
+      // setAccess(data);
+      setAccess(access);
+      access && navigate("/home");
+      if (!access)
+        alert("Revise los datos ingresados, email o password incorrectos");
+    });
   }
 
   function logOut() {
@@ -62,9 +77,9 @@ function App() {
     } else if (characters.filter((char) => char.id === +id).length > 0) {
       window.alert("¡Ya existe un personaje con este ID!");
     } else {
-      console.log(URL+id);
+      console.log(URL + id);
       axios
-        .get(URL+id)
+        .get(URL + id)
         .then((response) => {
           // Success
           setCharacters((characters) => [...characters, response.data]);

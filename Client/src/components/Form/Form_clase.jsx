@@ -7,19 +7,20 @@ export default class Form_clase extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            userName="",
-            password=""
+            userName:"",
+            password:""
         }
         // this.handleChange = this.handleChange.bind(this) 
       }
-      const handleChange = (event) => {
+
+
+      
+  render() {      
+        const handleChange = (event) => {
         const { name, value } = event.target;
         setUserData({ ...userData, [name]: value });
         setErrors(validate({ ...userData, [name]: value }));
       };
-
-      
-  render() {
     return (
       <div>Form_clase</div>
     )

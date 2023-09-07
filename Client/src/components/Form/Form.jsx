@@ -61,7 +61,7 @@ export default function Contact(props) {
     if (props.login(userData)) {
       setUserData({ email: "", password: "" });
       setErrors({ email: "", password: "" });
-    } else alert("Revise los datos ingresados, email o password incorrectos");
+    } 
   };
 
   // const login = (event) => {

@@ -130,3 +130,15 @@ Ahora comprobaremos que todo funciona correctamente. Para esto:
 <img src="./img/example.gif" alt="" />
 
 npm install axios
+npm i express
+
+VARIABLES DE ENTORNO:
+para usar .env
+   - crear el archivo .env
+      PASSWORD='password'
+   - instalar dotenv: npm i dotenv
+   - en el archivo donde se va a usar:
+      Ej en users.js:
+      require("dotenv").config();
+      const { PASSWORD } = process.env;
+      module.exports = [{ email: "ejemplo@gmail.com", password: PASSWORD }];
