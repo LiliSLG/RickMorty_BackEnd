@@ -3,7 +3,10 @@ import { validate } from "../../validation.js";
 import styles from "./Form.module.css";
 
 export default function Contact(props) {
-  const { EMAIL_DEFAULT, PASSWORD_DEFAULT } = props;
+  // const { EMAIL_DEFAULT, PASSWORD_DEFAULT } = props;
+  const EMAIL_DEFAULT = "ejemplo@gmail.com";
+  const PASSWORD_DEFAULT = "1Password";
+
   const [userData, setUserData] = React.useState({
     email: "",
     password: "",
@@ -23,11 +26,11 @@ export default function Contact(props) {
   const handleClickDefaultInputs = (event) => {
     if (event.target.checked) {
       setUserData({ email: EMAIL_DEFAULT, password: PASSWORD_DEFAULT });
+      setErrors({ email: "", password: "" });
+      setInputsOk(true);
     } else {
       setUserData({ email: "", password: "" });
     }
-    setErrors({ email: "", password: "" });
-    setInputsOk(true);
   };
 
   const handleChange = (event) => {
@@ -50,7 +53,7 @@ export default function Contact(props) {
         userData.email !== "" &&
         userData.password !== "" // hay datos en los inputs
     );
-  }, [errors]);
+  }, [errors, userData]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -61,7 +64,7 @@ export default function Contact(props) {
     if (props.login(userData)) {
       setUserData({ email: "", password: "" });
       setErrors({ email: "", password: "" });
-    } 
+    }
   };
 
   // const login = (event) => {

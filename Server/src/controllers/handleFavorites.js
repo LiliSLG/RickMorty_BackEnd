@@ -2,10 +2,10 @@ let myFavorites = [];
 
 const postFav = (req, res) => {
   // tendria que pasar {character: character} para hacer asi:
-  // const { character } = req.body;
-  // myFavorites.push(character);F
-  myFavorites.push(req.body);
-  res.json(myFavorites);
+  const { character } = req.body;
+  myFavorites.push(character);
+  // myFavorites.push(req.body);
+  res.status(201).json(myFavorites);
 };
 
 

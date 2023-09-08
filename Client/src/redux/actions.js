@@ -5,15 +5,16 @@ export const REMOVE_FAV = "REMOVE_FAV";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
 
-export const addFavorite = (character) => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav";
+export const addFavorite = (char) => {
+  const endpoint = 'http://localhost:3001/rickandmorty/fav';
   return (dispatch) => {
-    axios.post(endpoint, character).then(({ data }) => { //{character: character}
-      return dispatch({
-        type: ADD_FAV,
-        payload: data,
-      });
-    });
+      const data  = { character: char } // para poder hacer el destructuring en el server      
+     axios.post(endpoint, data).then(({ data }) => {
+        return dispatch({
+           type: ADD_FAV,
+           payload: data,
+        });
+     });
   };
 };
 

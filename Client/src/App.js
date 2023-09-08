@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
-import Cards from "./components/Cards/Cards.jsx";
+import Home from "./views/Home/Home";
+import About from "./views/About/About";
+import Details from "./views/Details/Details";
+import NotFound_404 from "./views/NotFound_404/NotFound_404";
+import Favorites from "./views/Favorites/Favorites.jsx";
+import Login from "./views/Login/Login";
 import Nav from "./components/Nav/Nav.jsx";
-import About from "./components/About/About";
-import Details from "./components/Details/Details";
-import NotFound from "./components/NotFound/NotFound";
-import Form from "./components/Form/Form";
-import Favorites from "./components/Favorites/Favorites.jsx";
+// import Cards from "./components/Cards/Cards.jsx";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -25,8 +26,8 @@ function App() {
   // const EMAIL = 'juanperez@hotmail.com';
   // const PASSWORD = 'cocoloco1';
 
-  const EMAIL = "ejemplo@gmail.com";
-  const PASSWORD = "1Password";
+  // const EMAIL = "ejemplo@gmail.com";
+  // const PASSWORD = "1Password";
 
   //login antes de server
   // function login(userData) {
@@ -65,7 +66,7 @@ function App() {
 
   useEffect(() => {
     !access && navigate("/");
-  }, [access]);
+  }, [access, navigate]);
 
   const onSearch = (id, random = false) => {
     backToHome();
@@ -104,7 +105,7 @@ function App() {
     // !XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     const inputDOM = document.getElementById("id-input");
     inputDOM.value = "";
-    // !NO DEBERIA MANIPULAR EL DOM, HACERLO CON LOS ESTADOS
+    // !NO DEBERIA MANIPULAR EL DOM
   };
 
   const onClose = (id) => {
@@ -124,27 +125,17 @@ function App() {
       </div>
       {location.pathname !== "/" && <Nav onSearch={onSearch} logOut={logOut} />}
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Form
-              login={login}
-              PASSWORD_DEFAULT={PASSWORD}
-              EMAIL_DEFAULT={EMAIL}
-            />
-          }
-        />
+        <Route path="/" element={<Login login={login} />} />
+        {/* <Route path="/" element={<Form login={login} PASSWORD_DEFAULT={PASSWORD} EMAIL_DEFAULT={EMAIL}/>}/> */}
         <Route
           path="/home"
-          element={<Cards characters={characters} onClose={onClose} />}
+          element={<Home characters={characters} onClose={onClose} />}
         />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/details/:DetailId"
-          element={<Details characters={characters} />}
-        />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/details/:detailId" element={<Details />} />
+        {/* <Route path="/details/:DetailId" element={<Details characters={characters} />}/> */}
+        <Route path="*" element={<NotFound_404 />} />
       </Routes>
     </div>
   );

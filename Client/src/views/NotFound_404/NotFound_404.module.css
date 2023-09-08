@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* justify-content:space-around; */
+  margin: 2em;
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.15);
+  color: #f6f4e6;
+  background-color: rgba(4, 1, 37, 0.441);
+  width: 30vw;
+  height: auto;   
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+.buttonBack {
+  width: 7rem;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5d7691;
+  background-image: linear-gradient(315deg, #3684cd 0%, #454545 74%);
+  background-size: 200% 100%;
+  background-position: left;
+  transition: 500ms;
+  color: #f6f4e6;
+  margin: 5px;
+  /* font-weight: bold; */
+  font-size: 13px;
+}
+
+.buttonBack :before {
+  width: 6rem;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b2845;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+  transition: 500ms;
+}
+
+.buttonBack:hover {
+  background-position: right;
+  color: #c6c3c3;
+}
+
+.buttonBack:hover:before {
+  color: rgba(255, 255, 255, 0.8);
+}
+.buttonBack :focus {
+  outline: none;
+}
+
+.active {
+  color: rgba(42, 46, 165, 0.557);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.disable {
+  color: #6c6c6900;
+  text-decoration: none;
+}
