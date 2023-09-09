@@ -14,9 +14,7 @@ export default function NotFound_404() {
       </div>
       <div>
         <h1>Oops! You seem to be lost.</h1>
-        <img src="https://wallpaperaccess.com/full/831749.png" alt="" />
       </div>
     </div>
   );
 }
-

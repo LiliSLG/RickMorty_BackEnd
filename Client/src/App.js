@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
@@ -59,14 +60,10 @@ function App() {
     setCharacters([]);
     navigate("/");
   }
-
+// saque el useEffect porque no me abria el error404
   // useEffect(() => {
-  //    !access && navigate('/');
+  //   !access && navigate("/");
   // }, [access, navigate]);
-
-  useEffect(() => {
-    !access && navigate("/");
-  }, [access, navigate]);
 
   const onSearch = (id, random = false) => {
     backToHome();
@@ -136,6 +133,7 @@ function App() {
         <Route path="/details/:detailId" element={<Details />} />
         {/* <Route path="/details/:DetailId" element={<Details characters={characters} />}/> */}
         <Route path="*" element={<NotFound_404 />} />
+        {/* <Route path=':error' element={<NotFound_404 />}/> */}
       </Routes>
     </div>
   );
