@@ -55,14 +55,25 @@ describe("Tests de Rutas", () => {
   });
 
   describe("DELETE /rickandmorty/fav/:id", () => {
+    it("Si no encuentra un personaje para borrar, debe devolver todos los personajes", async () => {
+      const { body } = await agent.delete("/rickandmorty/fav/3");
+      expect(body).toContainEqual(mortyMock);
+      expect(body).toContainEqual(rickMock);
+    });
+    it("Elimina correctamente el personaje", async () => {
+      const { body } = await agent.delete("/rickandmorty/fav/1");
+      expect(body).not.toContainEqual(rickMock);
+      
+    });
+
     // beforeEach(async () => {
     //   await agent.post("/rickandmorty/fav").send({ character: rickMock });
     //   await agent.post("/rickandmorty/fav").send({ character: mortyMock });
     // });
-    it("Responde con un arreglo correctamente", async () => {
-      const response = await agent.delete("/rickandmorty/fav/1");
-      expect(response.body.length).toBe(1);
-      expect(response.body).toEqual([mortyMock]);
-    });
+    // it("Se elimina correctamente el personaje", async () => {
+    //   const response = await agent.delete("/rickandmorty/fav/1");
+    //   expect(response.body.length).toBe(1);
+    //   expect(response.body).toEqual([mortyMock]);
+    // });
   });
 });

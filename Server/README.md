@@ -160,4 +160,10 @@ Además, dentro del package.json deberás agregar el siguiente script:
 
 PARA AUTENTIFICACION: JWT BCRYPT PASSPORT JS AUTH0
 
-   
+
+Para este error:
+warning: in the working copy of 'Server/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+ejecuto:
+   git config --global core.autocrlf false
+
+    it("Si no encuentra un personaje para borrar, debe devolver todos los personajes", async () => {
