@@ -13,34 +13,19 @@ import Nav from "./components/Nav/Nav.jsx";
 // import Cards from "./components/Cards/Cards.jsx";
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
 
-  const navigate = useNavigate();
-  const location = useLocation();
   const backToHome = () => {
     navigate("/home");
   };
 
   const URL = "http://localhost:3001/rickandmorty/character/";
-  // const URL = `https://rickandmortyapi.com/api/character/${id}`
-  // const EMAIL = 'juanperez@hotmail.com';
-  // const PASSWORD = 'cocoloco1';
 
-  // const EMAIL = "ejemplo@gmail.com";
-  // const PASSWORD = "1Password";
-
-  //login antes de server
-  // function login(userData) {
-  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
-  //     setAccess(true);
-  //     navigate("/home");
-  //     return true;
-  //   } else return false;
-  //   // setAccess(true);
-  //   // navigate('/home');
-  // }
-
+//mover a actions
   async function login(userData) {
     try {
       const { email, password } = userData;
@@ -69,10 +54,12 @@ function App() {
 
   // useEffect para validar el acceso al sistema ej:si el usuario ingresa manualmente /home, redirigira a la página de inicio ("locahost:3000" ó "/" que es donde esta el form del login)
   // con el useEffect no puedo abrir error404 VEEEER
-  useEffect(() => {
-    !access && navigate("/");
-  }, [access, navigate]);
 
+      useEffect(() => {
+        !access && navigate("/");
+      }, [access, navigate]);
+
+//mover a actions
   async function onSearch(id, random = false) {
     try {
       backToHome();
@@ -146,6 +133,24 @@ export default App;
 //         alert("Revise los datos ingresados, email o password incorrectos");
 //     });
 //   }
+
+  // const URL = `https://rickandmortyapi.com/api/character/${id}`
+  // const EMAIL = 'juanperez@hotmail.com';
+  // const PASSWORD = 'cocoloco1';
+
+  // const EMAIL = "ejemplo@gmail.com";
+  // const PASSWORD = "1Password";
+
+  //login antes de server
+  // function login(userData) {
+  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
+  //     setAccess(true);
+  //     navigate("/home");
+  //     return true;
+  //   } else return false;
+  //   // setAccess(true);
+  //   // navigate('/home');
+  // }
 
 // const onSearch = (id, random = false) => {
 //   fetch(`https://rickandmortyapi.com/api/character/${id}`)

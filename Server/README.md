@@ -142,3 +142,22 @@ para usar .env
       require("dotenv").config();
       const { PASSWORD } = process.env;
       module.exports = [{ email: "ejemplo@gmail.com", password: PASSWORD }];
+
+      TESTING
+      Instala las siguientes dependencias en el package.json de tu servidor:
+
+jest
+supertest
+
+npm install --save-dev jest supertest (para que se instale como dependencia)
+si quiero desinstalar: npm uninstall jest supertest
+Además, dentro del package.json deberás agregar el siguiente script:
+
+   "test": "jest --detectOpenHandles --coverage"
+
+
+
+
+PARA AUTENTIFICACION: JWT BCRYPT PASSPORT JS AUTH0
+
+   
