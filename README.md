@@ -1,12 +1,5 @@
 # **💪 HW2 | Web Server - Integration**
 
-## **🕒 DURACIÓN ESTIMADA**
-
-90 minutos
-
-<br />
-
----
 
 <div align="center">
 
@@ -167,3 +160,26 @@ ejecuto:
    git config --global core.autocrlf false
 
     it("Si no encuentra un personaje para borrar, debe devolver todos los personajes", async () => {
+
+
+SEQUALIZE
+
+Lo primero que deberás hacer es instalar las siguientes dependencias en tu package.json:
+npm i sequelize pg dotenv
+
+CREATE DATABASE rickandmorty;
+Puedes verificar que se haya creado correctamente con el comando: \l \c  rickandmorty
+ \dt
+ select * from "Favorites";
+ \d "Favorites"
+
+
+
+Dirígete a la raíz de tu proyecto Back-End. Allí deberás crea un archivo llamado .env. 
+
+DB_USER=postgres
+DB_PASSWORD= ---> // ¡Aquí va tu contraseña!
+DB_HOST=localhost
+
+
+
