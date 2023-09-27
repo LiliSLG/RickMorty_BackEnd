@@ -172,8 +172,10 @@ Puedes verificar que se haya creado correctamente con el comando: \l \c  rickand
  \dt
  select * from "Favorites";
  \d "Favorites"
+ (id, name, origin, status, image, species, gender)
+ '579','Snake with Legs','Snake Planet','Alive','https://rickandmortyapi.com/api/character/avatar/579.jpeg','Animal','Male'
 
-
+insert into "Users" (id,email, password) Values (1,'ejemplo@gmail.com', '1Password');
 
 Dirígete a la raíz de tu proyecto Back-End. Allí deberás crea un archivo llamado .env. 
 

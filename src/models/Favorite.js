@@ -6,20 +6,33 @@ module.exports = (sequelize) => {
     {
       id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         primaryKey: true,
-        autoincrement: true,
       },
-      name: { type: DataTypes.STRING, allowNull: false },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       status: {
         type: DataTypes.ENUM("Alive", "Dead", "unknown"),
-        defaultValue: "Alive",
+        allowNull: true,
+      },
+      species: {
+        type: DataTypes.STRING,
+        allowNull: true,
       },
       gender: {
-        type: DataTypes.ENUM("Male", "Female", "unknown", "Genderless"),
+        type: DataTypes.ENUM("Female", "Male", "Genderless", "unknown"),
+        allowNull: true,
       },
-      species: { type: DataTypes.STRING, allowNull: false },
-      origin: { type: DataTypes.STRING, allowNull: false },
-      image: { type: DataTypes.STRING, allowNull: false },
+      origin: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
     { timestamps: false }
   );

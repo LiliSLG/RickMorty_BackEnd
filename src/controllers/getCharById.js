@@ -16,7 +16,7 @@ const getCharById = async (req, res) => {
   }
 };
 
-module.exports = { getCharById };
+module.exports = getCharById;
 
 //version con promesas
 // const getCharById = (req, res) => {
