@@ -4,7 +4,10 @@ const router = require('../src/routes/index');
 const server = express();
 
 server.use((req, res, next) => {
-   res.header('Access-Control-Allow-Origin', '*');
+   // lo comento para poder hacer el deploy
+   // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+   // res.header('Access-Control-Allow-Origin', '*'); //cualquiera le hace peticiones
+   res.header('Access-Control-Allow-Origin', 'https://rick-morty-front-end.vercel.app');
    res.header('Access-Control-Allow-Credentials', 'true');
    res.header(
       'Access-Control-Allow-Headers',

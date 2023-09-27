@@ -28,11 +28,11 @@ UserModel(sequelize);
 const { User, Favorite } = sequelize.models;
 
 //crea tabla intermedia muchos a muchos
-User.belongsToMany(Favorite, {through: "user_favorite"});
-Favorite.belongsToMany(User, {through: "user_favorite"}); 
+User.belongsToMany(Favorite, { through: "user_favorite" });
+Favorite.belongsToMany(User, { through: "user_favorite" });
 
 module.exports = {
-   User,
-   Favorite,
-   conn: sequelize,
+  User,
+  Favorite,
+  conn: sequelize,
 };
