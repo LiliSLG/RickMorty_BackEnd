@@ -1,28 +1,27 @@
 const express = require("express");
 const morgan = require("morgan");
-const router = require('../src/routes/index');
+const cors = require("cors");
+const router = require("../src/routes/index");
 const server = express();
 
-server.use((req, res, next) => {
-   // lo comento para poder hacer el deploy
-   // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-   res.header('Access-Control-Allow-Origin', '*'); //cualquiera le hace peticiones
-   // res.header('Access-Control-Allow-Origin', 'https://rick-morty-front-end.vercel.app');
-   res.header('Access-Control-Allow-Credentials', 'true');
-   res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
-   );
-   res.header(
-      'Access-Control-Allow-Methods',
-      'GET, POST, OPTIONS, PUT, DELETE'
-   );
-   next();
-});
-
+server.use(cors());
 server.use(express.json());
 server.use(morgan("dev"));
-server.use('/rickandmorty', router);
+server.use((req, res, next) => {
+  // lo comento para poder hacer el deploy
+  // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header("Access-Control-Allow-Origin", "*"); //cualquiera le hace peticiones
+  // res.header('Access-Control-Allow-Origin', 'https://rick-morty-front-end.vercel.app');//Autorizo recibir solicitudes de este dominio
+  res.header("Access-Control-Allow-Credentials", true); //Autorizo recibir solicitudes que incluyan el encabezado con credenciales
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  ); //Autorizo recibir solicitudes con dichos hedears
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE"); //Autorizo las solicitudes tipo GET, POST, OPTIONS, PUT y DELETE.
+  next();
+});
+
+server.use("/rickandmorty", router);
 
 module.exports = server;
 

@@ -20,6 +20,11 @@ conn
         password: "1Password",
       });
       console.log("Se creo el usuario: ejemplo@gmail.com");
+      const otroUser = await User.create({
+        email: "polo@gmail.com",
+        password: "1Password",
+      });
+      console.log("Se creo el usuario: polo@gmail.com");
     } catch (error) {
       console.log("Error creando usuario", error);
     }
