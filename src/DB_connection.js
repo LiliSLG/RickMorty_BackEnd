@@ -5,21 +5,39 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 const FavoriteModel = require("./models/Favorite");
 const UserModel = require("./models/User");
 
+
+
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?ssl=true`,
-  { logging: false, native: false }
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+  {
+    dialectOptions: {
+      ssl: {
+        require: true, //habilitar certificado de seguridad
+        rejectUnauthorized: false, //para evitar errores de certificado
+      },
+    },
+
+    logging: false,
+    native: false,
+  }
 );
 
-//Para probar la conexion
-// sequelize
-//   .authenticate()
-//   .then(() => {
-//     console.log("Todo salio bien");
-//   })
-//   .catch((error) => {
-//     console.log("Fallo: ", error.message);
-//   });
+// servidor local
+// const sequelize = new Sequelize(
+//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
+//   { logging: false, native: false }
+// );
+
+// Para probar la conexion:
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("Conectado a:", `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`);
+  })
+  .catch((error) => {
+    console.log("Fallo: ", error.message);
+  });
 
 FavoriteModel(sequelize);
 UserModel(sequelize);
