@@ -9,12 +9,12 @@ const UserModel = require("./models/User");
 const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
   {
-    // dialectOptions: {
-    //   ssl: {
-    //     require: true, //habilitar certificado de seguridad
-    //     rejectUnauthorized: false, //para evitar errores de certificado
-    //   },
-    // },
+    dialectOptions: {
+      ssl: {
+        require: true, //habilitar certificado de seguridad
+        rejectUnauthorized: false, //para evitar errores de certificado
+      },
+    },
     logging: false,
     native: false,
   }

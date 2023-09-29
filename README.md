@@ -185,3 +185,17 @@ DB_HOST=localhost
 
 
 
+para el deploy:
+En el front modificar: app.js
+// axios.defaults.baseURL = "http://localhost:3001/";
+axios.defaults.baseURL = 'https://rickmorty-backend-k4l1-dev.fl0.io/';
+En el back modificar 
++ .env
++ DB_connection:
+   comentar para el deploy:
+    dialectOptions: {
+      ssl: {
+        require: true, //habilitar certificado de seguridad
+        rejectUnauthorized: false, //para evitar errores de certificado
+      },
+    },
