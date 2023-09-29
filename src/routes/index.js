@@ -21,6 +21,6 @@ router.delete("/fav/:id", deleteFav);
 
 //usuarios
 router.get("/login", login);
-router.post("/login", postUser);
+router.post("/register", postUser);
 
 module.exports = router;
